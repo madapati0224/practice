@@ -1,0 +1,35 @@
+package day_29;
+
+import java.time.Duration;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+
+public class Actionsdemo {
+
+	public static void main(String[] args) {
+		
+	WebDriver driver=new ChromeDriver();
+	
+	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+	
+	driver.get("https://demo.opencart.com/");
+	
+	driver.manage().window().maximize();
+	
+	Actions act=new Actions(driver);
+	
+//-----------------------------------------mouseoverAction------------------------------------------
+	
+	WebElement Desktop=driver.findElement(By.xpath("//a[text()='Desktops']"));
+	//WebElement pc=driver.findElement(By.xpath("//a[text()='PC (0)']"));
+	
+	//act.moveToElement(Desktop).moveToElement(pc).click().perform();
+	act.moveToElement(Desktop).perform();
+
+	}
+
+}
